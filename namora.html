@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Referência ao arquivo CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quer namorar comigo?</h1>
+        <div class="button-container">
+            <button id="sim" onclick="responder('sim')">Sim</button>
+            <button id="nao" onclick="responder('nao')">Não</button>
+        </div>
+        <div id="resposta" class="resposta"></div> <!-- Área para mostrar a resposta -->
+    </div>
+
+    <script>
+        let positions = [
+            { left: '50px', top: '50px' },    // Posição 1
+            { left: '250px', top: '200px' },  // Posição 2
+            { left: '450px', top: '50px' },   // Posição 3
+            { left: '650px', top: '300px' },  // Posição 4
+            { left: '150px', top: '400px' }   // Posição 5
+        ];
+        let moveCount = 0;  // Contador para a posição do botão
+
+        function responder(resposta) {
+            if (resposta === 'sim') {
+                document.getElementById('resposta').innerHTML = `
+                    <p>Voce não foi loca em recusar não né!? Espero que não enfim te amo MUITOOOO</p>
+                `;
+                document.getElementById('resposta').classList.add('sim-resposta');
+                resetButton();
+            } else if (resposta === 'nao') {
+                moveButton();
+            }
+        }
+
+        function moveButton() {
+            const naoButton = document.getElementById('nao');
+            if (moveCount < positions.length) {
+                const newPosition = positions[moveCount];
+                naoButton.style.left = newPosition.left;
+                naoButton.style.top = newPosition.top;
+                moveCount++;
+            } else {
+                // Se o botão já se moveu para todas as posições, volta para a posição inicial
+                resetButton();
+            }
+        }
+
+        function resetButton() {
+            const naoButton = document.getElementById('nao');
+            naoButton.style.left = '0px';  // Posição inicial
+            naoButton.style.top = '0px';   // Posição inicial
+            moveCount = 0;  // Reseta a contagem
+        }
+    </script>
+
+</body>
+</html>

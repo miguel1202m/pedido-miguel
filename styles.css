@@ -1,0 +1,79 @@
+/* Estilo geral do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Container onde o conteúdo principal ficará */
+.container {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+/* Título principal */
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #ff6b81;
+}
+
+/* Estilo dos botões */
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Estilo do botão "Não" */
+button#nao {
+    background-color: #dc3545;
+}
+
+button#nao:hover {
+    background-color: #c82333;
+}
+
+/* Área de resposta (mensagem quando clicar em "Sim") */
+.resposta {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #495057;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e9ecef;
+    display: none;
+    text-align: center;
+}
+
+.sim-resposta {
+    display: block;
+}
+
+/* Estilo do botão em movimento */
+button#nao {
+    position: absolute;  /* Necessário para o movimento */
+    transition: all 0.5s ease-in-out;
+}
